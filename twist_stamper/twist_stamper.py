@@ -25,7 +25,7 @@ class TwistStamper(Node):
     def __init__(self):
         super().__init__('twist_stamper')
 
-        self.declare_parameter("frame_id")
+        self.declare_parameter("frame_id",'base_link')
         self.frame_id = self.get_parameter("frame_id").get_parameter_value().string_value
 
         self.publisher_ = self.create_publisher(TwistStamped, 'cmd_vel_out', 10)
